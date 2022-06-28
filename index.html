@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <main>
+      <div class="rating-state" id="ratingState">
+        <img src="./images/icon-star.svg" alt="star" />
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <form action="#" class="rating">
+          <p class="error-msg" id="errorMsg">Please rate us between 1-5!</p>
+          <div class="rating__numbers">
+            <span data-id="1">1</span>
+            <span data-id="2">2</span>
+            <span data-id="3">3</span>
+            <span data-id="4">4</span>
+            <span data-id="5">5</span>
+          </div>
+          <button id="submit" type="submit">submit</button>
+        </form>
+      </div>
+
+      <!-- Thank you state starts here -->
+      <div class="thankyou-state" id="thankyouState">
+        <div class="image">
+          <img src="./images/illustration-thank-you.svg" alt="thankyou" />
+        </div>
+        <div class="result">
+          You selected
+          <span id="rate">4</span>
+          out of 5
+        </div>
+        <h2>Thank you!</h2>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </div>
+    </main>
+
+    <script src="submit.js"></script>
+  </body>
+</html>

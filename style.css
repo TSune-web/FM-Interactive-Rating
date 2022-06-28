@@ -1,0 +1,208 @@
+:root {
+  /* Primary colors */
+  --orange-clr: hsl(25, 97%, 53%);
+
+  /* Neutral colors */
+  --white-clr: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --m-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --v-dark-blue: hsl(216, 12%, 8%);
+}
+
+/* Main setup */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5em;
+  background-color: black;
+  color: var(--white-clr);
+  font-family: "Overpass", sans-serif;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--v-dark-blue);
+  width: min(88%, 41.5rem);
+  border-radius: 1.5rem;
+}
+
+.rating-state {
+  margin: 2.5rem;
+}
+
+.rating-state.submitted {
+  display: none;
+}
+
+.rating-state img {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+}
+
+.rating-state h1 {
+  margin: 1.25rem 0;
+  font-weight: 400;
+  font-size: 2.45rem;
+}
+
+.rating-state p {
+  color: var(--light-grey);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.rating-state form {
+  margin: 3rem 0;
+}
+
+.rating-state form.error .rating__numbers span {
+  outline: 2px solid rgb(255, 140, 0);
+}
+
+.rating-state form .error-msg {
+  display: none;
+}
+
+.rating-state form.error .error-msg {
+  display: block;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(255, 140, 0);
+}
+
+.rating-state form .rating__numbers {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.rating-state form .rating__numbers span {
+  width: 3.8rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--dark-blue);
+  color: var(--light-grey);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rating-state form .rating__numbers span.selected {
+  background-color: var(--m-grey);
+  color: var(--white-clr);
+}
+
+.rating-state form .rating__numbers span:hover,
+.rating-state form .rating__numbers span.selected:hover {
+  background-color: var(--orange-clr);
+  color: var(--white-clr);
+}
+
+.rating-state form button {
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 1.45rem 2.75rem;
+  text-transform: uppercase;
+  background-color: var(--orange-clr);
+  color: var(--white-clr);
+  letter-spacing: 1.6px;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.rating-state form button:hover {
+  background-color: var(--white-clr);
+  color: var(--orange-clr);
+}
+
+@media screen and (min-width: 768px) {
+  .rating-state {
+    margin-left: 3.25rem;
+    margin-right: 4.2rem;
+  }
+  .rating-state img {
+    margin-bottom: 2rem;
+  }
+  .rating-state h1 {
+    font-size: 2.85rem;
+  }
+  .rating-state p {
+    font-size: 1.5rem;
+  }
+}
+
+.thankyou-state {
+  display: none;
+}
+
+.thankyou-state.submitted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3rem 2rem;
+}
+
+.thankyou-state.submitted .image img {
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+.thankyou-state.submitted .result {
+  margin: 1rem 0 2.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.4rem;
+  background-color: var(--dark-blue);
+  color: var(--orange-clr);
+  border-radius: 5rem;
+}
+
+.thankyou-state.submitted h2 {
+  font-size: 2.375rem;
+  margin-bottom: 1.75rem;
+}
+
+.thankyou-state.submitted p {
+  font-size: 1.4rem;
+  color: var(--light-grey);
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+  .thankyou-state.submitted {
+    margin: 3.5rem;
+  }
+  .thankyou-state.submitted .image img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .thankyou-state.submitted .result {
+    font-size: 1.5rem;
+  }
+  .thankyou-state.submitted h2 {
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-bottom: 1.75rem;
+  }
+  .thankyou-state.submitted p {
+    font-size: 1.5rem;
+    margin: 0 0.25rem;
+  }
+}
